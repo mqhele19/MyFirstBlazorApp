@@ -1,0 +1,41 @@
+﻿@page "/dynamic"
+
+<h3>Our First DynamicComponent</h3>
+
+<br />
+
+<br />
+
+
+<button @onclick ="HandleBlazorServerClick">Blazor Server</button>
+<button @onclick ="HandleBlazoWebAssemblyClick">Blazor WebAssembly</button>
+
+<br />
+
+<br />
+<h3>@title</h3>
+<br />
+
+<div>
+    @content
+</div>
+
+@code {
+
+    private string title;
+    private string content;
+
+    
+    private void HandleBlazorServerClick() {
+        title = "Blazor Server";
+        content = "Blazor is cool it generates great dynamic content and sends the content to the browser";
+    }
+
+    private void HandleBlazoWebAssemblyClick()
+    {
+        title = "Blazor WebAssembly";
+        content = "Blazor WebAssemly runs completely within the browser and genearates dynamic content";
+
+    }
+
+}
